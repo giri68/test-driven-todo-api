@@ -50,8 +50,9 @@ app.get('/api/todos/search', function search(req, res) {
 var searchTerm  = req.query.q;
 var filtered = todos.filter(function(todo){
   return (todo.task.toLowerCase().includes(searchTerm.toLowerCase()) || todo.description.toLowerCase().includes(searchTerm.toLowerCase()));
-res.json({filtered});
+
 });
+res.json({data: filtered});
 });
 
 app.get('/api/todos', function index(req, res) {
